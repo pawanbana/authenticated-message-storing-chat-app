@@ -101,11 +101,7 @@ io.on('connection',(socket)=>{
         });
         
         callback();
-      /*socket.broadcast.emit('newMessage',{
-        from:message.from,
-        text:message.text,
-        createdAt:new Date().getTime()
-      });*/
+      
 
     });
 
@@ -336,7 +332,7 @@ app.post('/rooms/request/decide',authenticate2,(req,res)=>{
 
     app.get('/direct',(req,res)=>{
     	res.setHeader('Set-Cookie',[`x-auth=${req.query.token}`]);
-                 	res.redirect('/landing?room=Welcome&roomid=5bfdd6ac837da32a4c996f37');
+                 	res.redirect('/landing');
     });
 
 server.listen(port,()=>{

@@ -74,10 +74,10 @@ $('.all_rooms').on('click','button',function(){
 });
 
 $('.rooms_created').on('click','button',function(){
-	console.log($(this).text());
-	if($(this).text()!=='Create Room'){
+	
+	
   gotoroom($(this));
-	}
+	
            
 });
 
@@ -137,10 +137,10 @@ function addroom(room){
 }; 
 
 
-function userinroom(){
+function userinroom(roomid){
           var cookie=document.cookie;
 	      var token= cookie.replace(/(?:(?:^|.*;\s*)x-auth\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-          var url='/room/user?token='+token;
+          var url='/room/user?token='+token+'&roomid='+roomid;
           $.ajax({
           	method:'GET',
           	url:url,
@@ -154,6 +154,7 @@ function userinroom(){
 
 function adduser(users){
 	users.forEach(function(user){
+    console.log(user);
 		adduserinroom(user);
 	});
 
@@ -389,27 +390,9 @@ var socket =io();
 	
 function addusers(){
   
-        var cookie=document.cookie;
-        var token= cookie.replace(/(?:(?:^|.*;\s*)x-auth\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-        var params=deparam(window.location.search);
-       
+         var params=deparam(window.location.search);
+       userinroom(params.roomid);
 
-          var url='/room/user?token='+token+'&roomid='+params.roomid;
-          $.ajax({
-            method:'GET',
-            url:url,
-
-          }).then(function(data){
-               
-             var item=$('<button class="user_name"></button>');
-              data.forEach(function(datas){
-                item.text(datas.name);
-               $('.rooms_added').append(item);
-                });
-          
-          }).catch(function(err){
-            console.log(err);
-          });
 }
   
 
@@ -429,10 +412,7 @@ function addusers(){
            scrollToBottom();
            gotoBottom('messages');
 
-		/*
-		var li=jQuery('<li></li>');
-		li.text(`${message.from} ${formattedTime}:${message.text}`);
-		jQuery('#messages').append(li);*/
+		
 	});
 
 	
@@ -458,30 +438,3 @@ function addusers(){
           });
 	});
 
-/*
-	var locationButton=jQuery('#send-location');
-
-	locationButton.on('click',function () {
-		if(!navigator.geolocation){
-			return alert('geolocation not supported by your browser');
-		}
-         locationButton.attr('disabled','disabled').text('Sending location......');
-		navigator.geolocation.getCurrentPosition(function(position){
-			locationButton.removeAttr('disabled').text('Send location');
-      var cookie=document.cookie;
-           var token= cookie.replace(/(?:(?:^|.*;\s*)x-auth\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-      
-      var params=deparam(window.location.search);
-             socket.emit('createLocationMessage',{
-              text:'https://www.google.com/maps?q='+position.coords.latitude+','+position.coords.longitude,
-              roomname:params.room,
-              roomid:params.roomid,
-              token:token
-
-             });
-		},function(){
-			locationButton.removeAttr('disabled').text('Send location');
-
-			alert('unable to fetch location');
-		})
-	});*/
