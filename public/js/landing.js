@@ -33,21 +33,26 @@ $('#the_createroom').on('click',function(){
           .then(function(rooms){
           	rooms.forEach(function(room){
           		if(room.name==roomname){
+               
+
           			count++;
           		}
+
           	});
+            
+            if(count==0){
+               var url='/rooms/create?token='+token;
+               $.post(url,{name:roomname,mode:mode});
+               setTimeout(function(){ location.reload(); }, 2000);
+          }else{
+            alert('This room already exists');
+          }
           })
           .catch(function(err){
           	console.log(err);
           });
-
-          if(count==0){
-          	   var url='/rooms/create?token='+token;
-               $.post(url,{name:roomname,mode:mode});
-               setTimeout(function(){ location.reload(); }, 2000);
-          }else{
-          	alert('This room already exists');
-          }
+          
+          
     
     
     
@@ -249,7 +254,14 @@ function getallrooms() {
 
 
 function addallroom(room){
-	var newroom=$('<button class="allroomname">'+room.name+'</button>');
+
+	var newroom;
+  if(room.mode==true){
+       newroom=$('<button class="allroomname">'+room.name+' '+' <i class="fas fa-lock"></i>'+'</button>');
+  }
+  else{
+        newroom=$('<button class="allroomname">'+room.name+' '+' '+'</button>');
+  }
 	newroom.data('id',room._id);
 	newroom.data('name',room.name);
 	newroom.data('creater',room._creater);

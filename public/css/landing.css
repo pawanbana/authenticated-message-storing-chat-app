@@ -408,6 +408,7 @@ font-size:25px;
 	width:100%;
 	margin-top:10px;
 	min-height: 300px;
+
 	/*max-height:375px;*/
 	flex-grow:1;
 	border:1px solid black;
@@ -426,6 +427,7 @@ font-size:25px;
 	overflow:hidden;
     font-size:15px;
     
+    text-align: left;
 	background: #265f82;
     margin-top:2px;
     margin-bottom:2px;
@@ -433,6 +435,7 @@ font-size:25px;
   	color:white;
   	border:1px solid black;
 }
+
 .allroomname:hover{
 	background:black;
 	color:white;

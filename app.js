@@ -178,20 +178,38 @@ app.post('/room/request',authenticate2,(req,res)=>{
   
    var body=_.pick(req.body,['name','userid','roomname','roomid','createrid']);
    Room.findOne({_id:body.roomid}).then((room)=>{
-  
-
-         if(room.mode==false){
+      var count=0;
+          room.users.forEach(function(user){
+            if(user.id==body.userid){
+              count++;
+            }
             
-            room.adduser(body.name,body.userid);
-            User.findOne({_id:body.userid}).then((user)=>{
-              user.addRoom(body.roomname,body.roomid);
+          });
+          
+
+          if(count==0){
+                 if(room.mode==false){
+                   room.adduser(body.name,body.userid);
+                   User.findOne({_id:body.userid}).then((user)=>{
+                   user.addRoom(body.roomname,body.roomid);
             });
          }
          else{
            User.findOne({_id:body.createrid}).then((user)=>{
+            var t=0;
+            user.pendingRequest.forEach(function(request){
+              if(request.name==body.name && request.userid==body.userid && request.roomname==body.roomname && request.roomid==body.roomid ){
+                        t++;
+              }
+            });
+            if(t==0){
               user.addPendingRequest(body.name,body.userid,body.roomname,body.roomid);
+            }
            });
          }
+          }
+
+         
    }).catch((e)=>{
      res.send("error in adding request");
    });
