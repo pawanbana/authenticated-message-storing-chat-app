@@ -1,0 +1,538 @@
+/*html{
+	height:100%;
+	
+
+}
+body{
+	position:absolute; top:0; bottom:0; right:0; left:0;
+	border:2px solid black;
+}*/
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Open+Sans+Condensed:300');
+
+html {
+    width:100%;
+    height: 100%;
+    display: table;
+}
+
+body {
+    width:98%;
+    display:table-cell;
+	border:1px solid black;
+	text-align: center;
+
+	background: -moz-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(49,84,129,1)), color-stop(100%, rgba(39,107,130,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(125deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* ie10+ */
+  background: linear-gradient(325deg, rgba(39,107,130,1) 0%, rgba(49,84,129,1) 100%); /* w3c */
+	
+}
+/*this is for main div*/
+.main{
+	height:100%;
+	width:99%;
+	display:inline-block;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap:nowrap; 
+}
+
+
+
+/*this is for left sidebar*/
+
+.left_sidebar{
+	float:left;
+	margin-top:5px;
+	height:99%;
+	width:18%;
+	min-width:275px;
+	margin-right:1%;
+	margin-left:1%;
+	
+}
+
+
+.user_details{
+	height:18%;
+    min-height:150px;
+    max-height:150px;
+	overflow:hidden;
+	overflow-y:scroll;
+	border:1px solid black;
+	margin:1px;
+	margin-bottom: 10px;
+	text-align:left;
+	background: white;
+	padding-left:20px;
+	
+	box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -o-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+
+}
+.user_details h1{
+font-family: 'Cutive Mono', monospace;
+font-size:25px;
+}
+.user_details h2{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 20px;
+}
+.logout{
+  width: 7em;  
+  height: 2em;
+  font-size:15px;
+   border-radius:30px;
+	background:#265f82;  /* fallback for old browsers */  
+  	color:white;
+  	border:1px solid black;
+  font-weight:100
+  
+}
+.logout:hover{
+	background: #0F2027;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     color:white;
+}
+.user_details button:focus{
+	background: #0F2027;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     color:white;
+     outline:none;
+}
+
+
+.rooms_created{
+	height:75%;
+	min-height:175px;
+	max-height:300px;
+	width:98%;
+	border:1px solid black;
+	margin:1px;
+	overflow:hidden;
+	overflow-y: scroll;
+	margin-bottom: 10px;
+	background: white;
+	box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -o-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+
+}
+.create_room{
+	width:70%;
+    height: 2em;
+    overflow:hidden;
+    font-size:15px;
+    
+	background:black;
+    margin-top:2px;
+    margin-bottom:2px;
+    
+  	color:white;
+  	border:1px solid black;
+}
+.create_room:hover{
+	background:black;
+	color:white;
+}
+.rooms_added{
+	height:38%;
+	min-height:175px;
+	max-height: 285px;
+	width:98%;
+	border:1px solid black;
+	margin:1px;
+	overflow:hidden;
+	overflow-y:scroll;
+	background:white;
+	
+	box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -o-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+}
+
+.room_name{
+      width:70%;
+    height: 2em;
+    overflow:hidden;
+    font-size:15px;
+    
+	background:  #265f82;
+    margin-top:2px;
+    margin-bottom:2px;
+    
+  	color:white;
+  	border:1px solid black;
+
+   }
+
+
+.room_name:hover{
+       color:white;
+       background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+.room_name:focus{
+	 color:white;
+       background-image: linear-gradient(to right, #434343 0%, black 100%);
+       outline: none;
+}
+.user_name{
+	width:70%;
+    height: 2em;
+    overflow:hidden;
+    font-size:15px;
+    
+	background: #265f82;
+    margin-top:2px;
+    margin-bottom:2px;
+    
+  	color:white;
+  	border:1px solid black;
+}
+
+/*this is for middle box*/
+.middle_box{
+	float:left;
+	margin-top:5px;
+	height:99%;
+	width:57%;
+	min-width: 600px;
+	margin-left:1%;
+	margin-right:1%;
+	
+}
+.roomname{
+   height:50px;
+   width:100%;
+   margin-bottom:10px;
+   border:1px solid black;
+   border-bottom: none;
+   background: white;
+   box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -o-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    text-align: center;
+    font-size:25px;
+
+
+}
+
+.chat_box{
+	height:77%;
+	min-height:450px;
+	max-height:600px;
+	width:100%;
+	margin-bottom: 20px;
+	border:1px solid black;
+	text-align:left;
+	overflow-y:scroll;
+	background: white;
+	box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -o-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+}
+
+.message{
+	text-align:left;
+	margin:10px;
+
+}
+.authorname{
+	padding:0;
+	margin:0;
+	font-weight: 800;
+	font-size:18px;
+}
+.messagetext{
+	padding:0;
+	margin-top:3px;
+}
+.messagetime{
+	    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: .95rem;
+}
+
+.admin{
+	text-align:center;
+	color:blue;
+}
+.type_box{
+	height:50px;
+	width:100%;
+	border:1px solid black;
+	background:white;
+	
+	box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -o-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    background: #e6eaee;
+    display:flex;
+  
+ 
+}
+
+#message-form{
+	border: none;
+    flex-grow: 1;
+    margin:5px;
+
+	
+}
+
+#send{
+	min-width:100px;
+	margin:5px;
+	
+	background: #265f82;
+	color:white;
+	border:none;
+	
+
+	
+}
+
+
+
+/*this is for right sidebar*/
+.right_sidebar{
+	float:left;
+	margin-top: 5px;
+	height:99%;
+	width:18%;
+	min-width: 275px;
+	margin-left:1%;
+	
+}
+
+.room_requests{
+	height: 47%;
+	min-height:300px;
+	max-height:375px;
+	width:100%;
+	margin-bottom:10px;
+	border:1px solid black;
+	overflow:hidden;
+	overflow-y:scroll;
+	background: white;
+	box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -o-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+}
+
+
+.roomrequest{
+	width:100%;
+	height:100px;
+	border:none;
+	border-bottom:1px solid black;
+	margin-bottom:2px;
+	
+}
+.roomrequest p{
+	margin-top:7px;
+	margin-bottom: 5px;
+}
+
+.accept{
+	width:45%;
+	height:27px;
+
+    overflow:hidden;
+    font-size:15px;
+    
+	background: #265f82;
+    margin-top:2px;
+    margin-right:5px;
+    margin-bottom:2px;
+    
+  	color:white;
+  	border:1px solid black;
+}
+.reject{
+	width:45%;
+	height:27px;
+	overflow:hidden;
+    font-size:15px;
+    
+	background: #265f82;
+    margin-top:2px;
+    margin-bottom:2px;
+    
+  	color:white;
+  	border:1px solid black;
+}
+.accept:hover,.reject:hover{
+	background:black;
+	color:white;
+}
+
+.all_rooms{ 
+	height:47%;
+	width:100%;
+	margin-top:10px;
+	min-height: 300px;
+	max-height:375px;
+	border:1px solid black;
+	overflow:hidden;
+	overflow-y:scroll;
+	background: white;
+	box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    -o-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+}
+
+.allroomname{
+	width:80%;
+	height:27px;
+	overflow:hidden;
+    font-size:15px;
+    
+	background: #265f82;
+    margin-top:2px;
+    margin-bottom:2px;
+    
+  	color:white;
+  	border:1px solid black;
+}
+.allroomname:hover{
+	background:black;
+	color:white;
+}
+h2{
+	margin:3px;
+}
+
+
+
+
+
+
+
+
+
+/*for the create room popup*/
+
+
+
+/* Full-width input fields */
+#createroomname{
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+/* Set a style for all buttons */
+#the_createroom {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 26px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+	font-size:20px;
+}
+#the_createroom:hover {
+    opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+/* The Modal (background) */
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 40%; 
+	padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+button{
+   
+  
+  cursor: pointer;
+  border-radius:10px;
+  
+}
+
+label{
+	font-size:25px;
+}
+
+select{
+	width:200px;
+	height:35px;
+	overflow:hidden;
+    font-size:20px;
+    border:1px solid #ccc;
+	background:white;
+    margin-top:2px;
+    margin-bottom:2px;
+    
+  	color:black;
+  	border:1px solid black;
+}
+

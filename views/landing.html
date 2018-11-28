@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat | App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/css/landing.css">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+</head>
+<body>
+
+	<div class="main">
+		<!-- this div is for chat room and user details -->
+          <div class="left_sidebar">
+          	<div class="user_details">
+             <h1 class="username"></h1>
+             <h2 class="useremail"></h2>
+             <br>
+             <button class="logout">Logout</button>
+          
+            </div>
+          	<div class="rooms_created">
+              <h2>Your Rooms </h2>
+              <button class="create_room" onclick="document.getElementById('modal-wrapper').style.display='block'" >Create Room</button>
+
+              
+              
+
+              
+
+            </div>
+          	<div class="rooms_added">
+              <h2>Users In this Room</h2>
+              <!-- <button class="user_name">User name</button> -->
+             
+              
+
+            </div>
+          </div>
+          
+        <!-- this div is for chat box and type box -->
+          <div class="middle_box">
+               <div class="roomname">Room name</div>
+          	   <div class="chat_box">
+                <div class="message">
+                 <ol id="messages" class="chat__messages">
+        
+                  </ol>
+                </div>
+
+
+
+
+               </div>
+          	   <div class="type_box">
+
+                  
+                   <input id="message-form"type="text" name="message">
+                <button id="send">Send</button>
+                 
+                
+               </div>
+          </div>
+    
+        <!-- this div is for search room and activity/request details -->
+           <div class="right_sidebar">
+           	     
+           	     <div class="room_requests">
+                  <h2>Pending Requests </h2>
+                   
+                   
+                 </div>
+           	     <div class="all_rooms">
+                         <h2>All Rooms</h2>
+                       
+                 </div>
+           </div>
+	</div>
+
+<div id="modal-wrapper" class="modal">
+  
+  <div class="modal-content animate" >
+        
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+      
+      <h1 style="text-align:center">Create Room</h1>
+    </div>
+
+    <div class="container">
+      <input id="createroomname" type="text" placeholder="Enter room name" name="roomname">
+      <label>Mode:</label>
+      <select id="mode">
+        <option selected value='0'>Public</option>
+        <option value='1'>Private</option>
+      </select>        
+      <button id="the_createroom" type="submit">Create</button>
+      
+    </div>
+    
+  </div>
+  
+</div>
+
+
+
+
+
+<script id="message-template" type="text/template">
+  
+   <p class="authorname">{{from}} <span class="messagetime">{{createdAt}}</span></p>
+                  <p class="messagetext">{{text}}</p>
+                </div>
+               
+                
+
+</script>
+<script id="admin-message-template" type="text/template">
+  
+<div class="admin">
+                  <p class="admin_message">{{text}}has joined the Chat room</p>
+</script>
+
+
+
+
+
+<script type="text/javascript" src="/js/mustache.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/moment.js"></script>
+<script type="text/javascript" src="/js/deparam.js"></script>
+
+<script type="text/javascript" src="/js/moment.js"></script> 
+
+<script type="text/javascript" src="/js/landing.js"></script> 
+</body>
+</html>

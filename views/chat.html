@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/css/chat.css">
+
+	<title>Chat | ChatApp</title>
+</head>
+<body class="chat">
+
+<div class="chat__sidebar">
+	<h3>Chat Room</h3>
+	<div id="homebutton"><a href="/landing">Go Back</a></div>
+	<div id="users"></div>
+
+</div>
+
+<div class="chat__main">
+				<ol id="messages" class="chat__messages">
+				
+			    </ol>
+               
+               <div class="chat__footer">
+               	
+			<form id="message-form">
+				<input type="text" name="message" placeholder="type message here">
+				<button>Send</button>
+			</form>
+
+			<button id="send-location" >Send Location</button>
+               </div>
+
+</div>
+
+
+<script id="message-template" type="text/template">
+	<li class="message"></li>
+	<div class="message__title">
+		<h4>{{from}}</h4>
+		<span>{{createdAt}}</span>
+
+	</div>
+	<div class="message__body">
+		<p>{{text}}</p>
+	</div>
+
+</script>
+<script id="location-message-template" type="text/template">
+	<li class="message"></li>
+	<div class="message__title">
+		<h4>{{from}}</h4>
+		<span>{{createdAt}}</span>
+
+	</div>
+	<div class="message__body">
+		<a href="{{text}}" target="_blank">My current location</a>
+	</div>
+
+</script>
+
+
+
+<script type="text/javascript" src="/js/mustache.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/moment.js"></script>
+<script type="text/javascript" src="/js/deparam.js"></script>
+
+
+<script type="text/javascript" src="/js/chat.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+
+
+</body>
+</html>
