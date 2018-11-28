@@ -17,7 +17,7 @@ var {authenticate,authenticate2}=require('./middleware/authenticate');
 var {mongoose}=require('./db/mongoose.js');
 var {User}=require('./models/user.js');
 var {Room}=require('./models/rooms.js');
-var {Chat}=require('./models/Chat.js');
+var {Chat}=require('./models/chat.js');
 
 const cookieParser=require('cookie-parser');
 
