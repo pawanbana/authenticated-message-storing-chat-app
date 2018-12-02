@@ -10,7 +10,7 @@ var ChatSchema= new mongoose.Schema({
          },
          createdAt:{
          	type:Date,
-         	default:moment().valueOf()
+         	default:Date.now
          },
          _creater:{
          	type:mongoose.Schema.Types.ObjectId,

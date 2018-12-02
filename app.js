@@ -261,6 +261,7 @@ app.post('/rooms/request/decide',authenticate2,(req,res)=>{
               name:body.name
 
            	});
+            console.log(chat);
            	chat.save().then((doc)=>{
            		res.send(doc);
            	});
